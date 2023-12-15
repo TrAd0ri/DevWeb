@@ -13,13 +13,13 @@ $uri = urldecode($uri);
 
 switch ($uri) {
   case '/':
-    require_once __DIR__ . '/src/Controllers/HomeController.php';
+    require_once __DIR__ . '/controllers/HomeController.php';
     break;
   case '/login':
-    require_once __DIR__ . '/src/Controllers/LoginController.php';
+    require_once __DIR__ . '/controllers/LoginController.php';
     break;
   default:
     header('HTTP/1.0 404 Not Found');
-    require_once __DIR__ . '/src/Views/404.php';
+    require_once __DIR__ . '/views/404.php';
     break;
 }
