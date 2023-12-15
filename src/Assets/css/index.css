@@ -3,5 +3,52 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: Barlow Semi Condensed, sans-serif;
+}
+
+input {
+  background-color: var(--input);
+  color: var(--foreground);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: var(--secondary);
+}
+
+input[type="submit"] {
+  background-color: var(--primary);
+  color: var(--foreground);
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #5b4bd8;
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--foreground);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #5b4bd8;
+}
+
+button > a {
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+a {
+  text-decoration: none;
+  color: var(--foreground);
 }
