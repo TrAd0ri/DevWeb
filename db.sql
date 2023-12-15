@@ -80,3 +80,23 @@ VALUES
         'https://image.jeuxvideo.com/medias-sm/163129/1631287693-8700-jaquette-avant.jpg',
         'https://www.rockstargames.com/fr/gta-v'
     );
+
+INSERT INTO
+    platform
+VALUES
+    (
+        1,
+        'PlayStation'
+    ),
+    (
+        2,
+        'PC'
+    ),
+    (
+        3,
+        'Nintendo'
+    ),
+    (
+        4,
+        'Xbox'
+    );
