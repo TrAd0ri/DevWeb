@@ -4,6 +4,8 @@ DROP TABLE IF EXISTS GAME;
 
 DROP TABLE IF EXISTS GAMER;
 
+DROP TABLE IF EXISTS PLATFORM;
+
 CREATE TABLE game (
     id_game int PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name_game VARCHAR(128) NOT NULL,
@@ -34,11 +36,15 @@ CREATE TABLE library (
     FOREIGN KEY (id_gamer) REFERENCES gamer (id_gamer)
 );
 
+CREATE TABLE platform (
+    id_platform int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name_platform VARCHAR(128) NOT NULL
+);
+
 INSERT INTO
-    game
+    game(name_game, editor_game, released_game, platform_game, description_game, URL_cover_game, URL_site_game)
 VALUES
     (
-        1,
         'Red Dead Redemption 2',
         'Rockstar Games',
         '2018-10-26',
@@ -48,7 +54,6 @@ VALUES
         'https://www.rockstargames.com/fr/reddeadredemption2'
     ),
     (
-        2,
         'Red Dead Redemption',
         'Rockstar Games',
         '2010-05-18',
@@ -58,7 +63,6 @@ VALUES
         'https://www.rockstargames.com/fr/reddeadredemption'
     ),
     (
-        3,
         'Zelda BOTW',
         'Nintendo EPD, Monolith Soft',
         '2017-03-03',
@@ -68,7 +72,6 @@ VALUES
         'https://www.nintendo.fr/Jeux/Jeux-Nintendo-Switch/The-Legend-of-Zelda-Breath-of-the-Wild-1173609.html'
     ),
     (
-        4,
         'GTA 5',
         'Rockstar Games',
         '2017-03-03',
