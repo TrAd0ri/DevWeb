@@ -67,6 +67,9 @@ function deleteUser($id)
 
 function formatUser($user)
 {
+  if (!$user)
+    return null;
+
   return [
     'id' => $user['id_gamer'] ?? null,
     'email' => $user['email_gamer'] ?? null,
