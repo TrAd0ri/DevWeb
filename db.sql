@@ -1,7 +1,5 @@
 DROP TABLE IF EXISTS LIBRARY;
 
-DROP TABLE IF EXISTS canplay;
-
 DROP TABLE IF EXISTS PLATFORM;
 
 DROP TABLE IF EXISTS GAME;
@@ -88,14 +86,50 @@ VALUES
         'PlayStation'
     ),
     (
+        1,
+        'Xbox'
+    ),
+    (
+        1,
+        'PC'
+    ),
+    (
+        2,
+        'PlayStation'
+    ),
+    (
+        2,
+        'Xbox'
+    ),
+    (
         2,
         'PC'
+    ),
+    (
+        2,
+        'Nintendo'
     ),
     (
         3,
         'Nintendo'
     ),
     (
+        3,
+        'PC'
+    ),
+    (
+        4,
+        'PlayStation'
+    ),
+    (
+        4,
+        'PC'
+    ),
+    (
         4,
         'Xbox'
+    )
+    (
+        4,
+        'Nintendo'
     );
