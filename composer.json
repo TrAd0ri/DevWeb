@@ -1,0 +1,17 @@
+{
+    "name": "antoine/devweb",
+    "autoload": {
+        "psr-4": {
+            "Antoine\\Devweb\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "aBgAmeuR",
+            "email": "a.josset@yahoo.com"
+        }
+    ],
+    "require": {
+        "symfony/dotenv": "^6.4"
+    }
+}
