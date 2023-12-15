@@ -10,6 +10,7 @@ $dotenv->load(__DIR__ . '/.env');
 $uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
 $uri = '/' . trim(str_replace($uri, '', $_SERVER['REQUEST_URI']), '/');
 $uri = urldecode($uri);
+$uri = strtok($uri, '?');
 
 switch ($uri) {
   case '/':
