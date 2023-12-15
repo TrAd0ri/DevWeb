@@ -5,28 +5,30 @@ DROP TABLE IF EXISTS GAME;
 DROP TABLE IF EXISTS GAMER;
 
 CREATE TABLE game (
-    id_game int PRIMARY KEY NOT NULL,
-    name_game VARCHAR(100),
-    editor_game VARCHAR(100),
-    released_game DATE,
-    type_game VARCHAR(100),
-    description_game TEXT(300),
-    URL_cover_game VARCHAR(150),
-    URL_site_game VARCHAR(150)
+    id_game int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name_game VARCHAR(128) NOT NULL,
+    editor_game VARCHAR(128) NOT NULL,
+    released_game DATE NOT NULL,
+    platform_game VARCHAR(128) NOT NULL,
+    description_game TEXT(256) NOT NULL,
+    URL_cover_game VARCHAR(256) NOT NULL,
+    URL_site_game VARCHAR(256) NOT NULL,
+    created_at_game DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE gamer (
-    id_gamer int PRIMARY KEY NOT NULL,
-    name_gamer VARCHAR(100),
-    surname_gamer VARCHAR(100),
-    email_gamer VARCHAR(100),
-    password_gamer VARCHAR(100)
+    id_gamer int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name_gamer VARCHAR(128) NOT NULL,
+    surname_gamer VARCHAR(128) NOT NULL,
+    email_gamer VARCHAR(128) NOT NULL,
+    password_gamer VARCHAR(128) NOT NULL,
+    created_at_gamer DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE library (
-    id_game INT,
-    id_gamer INT,
-    number_hours_game INT,
+    id_game INT NOT NULL,
+    id_gamer INT NOT NULL,
+    number_hours_game INT DEFAULT 0,
     PRIMARY KEY (id_game, id_gamer),
     FOREIGN KEY (id_game) REFERENCES game (id_game),
     FOREIGN KEY (id_gamer) REFERENCES gamer (id_gamer)
@@ -42,7 +44,7 @@ VALUES
         '2018-10-26',
         'PlayStation',
         'Red Dead Redemption II, également abrégé RDRII ou RDR2, est un jeu vidéo d action-aventure et de western multiplateforme, développé et édité par Rockstar Games, sorti en octobre 2018 sur Playstation 4 et Xbox One, puis en novembre 2019 sur Windows et Stadia.',
-        'https://image.api.playstation.com/cdn/UP1004/CUSA03041_00/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.png',
+        'https://image.api.playstation.com/cdn/UP1284/CUSA03041_00/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.png',
         'https://www.rockstargames.com/fr/reddeadredemption2'
     ),
     (
