@@ -41,6 +41,14 @@ CREATE TABLE platform (
     name_platform VARCHAR(128) NOT NULL
 );
 
+CREATE TABLE canPlay (
+	id_game INT NOT NULL,
+    id_platform INT NOT NULL,
+    PRIMARY KEY (id_game, id_platform),
+    FOREIGN KEY (id_game) REFERENCES game (id_game),
+    FOREIGN KEY (id_platform) REFERENCES platform (id_platform)
+);
+
 INSERT INTO
     game(name_game, editor_game, released_game, platform_game, description_game, URL_cover_game, URL_site_game)
 VALUES
