@@ -1,10 +1,9 @@
 :root {
   --background: #211f2a;
-  --foreground: ;
+  --foreground: #ffffff;
 
   --primary: #6757d6;
-  --secondary: #ffffff;
-  --tertiary: #757575;
+  --secondary: #757575;
 
   --input: #2b2f40;
 }
