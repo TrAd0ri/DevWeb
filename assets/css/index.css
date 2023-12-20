@@ -43,9 +43,15 @@ button:hover {
   background-color: #5b4bd8;
 }
 
+button:has(> a) {
+  padding: 10px 0;
+}
+
 button > a {
   text-decoration: none;
   color: var(--foreground);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 a {
