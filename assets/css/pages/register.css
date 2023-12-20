@@ -1,0 +1,31 @@
+@import url("./../index.css");
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  main {
+    background-color: var(--tertiary);
+    padding: 60px 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
