@@ -31,7 +31,7 @@ function createUser($email, $password, $surname, $name)
   $query = $db->prepare('INSERT INTO gamer (email_gamer, password_gamer, surname_gamer, name_gamer) VALUES (:email, :password, :surname, :name)');
   $query->execute([
     'email' => $email,
-    'password' => $password,
+    'password' => password_hash($password, PASSWORD_DEFAULT),
     'surname' => $surname,
     'name' => $name,
   ]);

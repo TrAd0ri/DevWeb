@@ -14,9 +14,23 @@ $password = $_POST['password'] ?? null;
 if ($email && $password) {
   $user = getUserByEmail($email);
 
-  var_dump($user);
-  //   header("Location: ./../index.php");
-// } else {
-//   header("Location: ./../index.php?error=true");
-// }
+  if (!$user) {
+    header("Location: ../../login?error=true");
+    return;
+  }
+
+  if (!password_verify($password, $user['password'])) {
+    header("Location: ../../login?error=true");
+    return;
+  }
+
+  session_start();
+  $_SESSION["user_id"] = $user['id'];
+  $_SESSION["user_name"] = $user['name'];
+  $_SESSION["user_surname "] = $user['surname'];
+  $_SESSION["user_email"] = $user['email'];
+
+  header("Location: ./../../");
+} else {
+  header("Location: ../../login?error=true");
 }

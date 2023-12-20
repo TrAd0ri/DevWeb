@@ -21,7 +21,7 @@
 
       <div class="form-item">
         <label for="password">Mot de passe :</label>
-        <input type="password" name="password" id="password" placeholder="Mot de passe" require minlength="8">
+        <input type="password" name="password" id="password" placeholder="Mot de passe" require minlength="6">
       </div>
 
       <input type="submit" value="Se connecter">
