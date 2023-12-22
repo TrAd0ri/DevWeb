@@ -49,7 +49,7 @@ VALUES
         'Patrick',
         'patrick.dupont@example.com',
         '$2y$10$RVaayFUxxD5CALXzYQXEreO9cjMyBgQhtiYHc.nMpvHKIKshXKozO'
-    )
+    );
 
 
 
@@ -139,7 +139,7 @@ VALUES
     (
         4,
         'Xbox'
-    )
+    ),
     (
         4,
         'Nintendo'
