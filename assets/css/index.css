@@ -9,7 +9,7 @@ input {
   background-color: var(--input);
   color: var(--foreground);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   font-size: 16px;
 }
@@ -32,7 +32,7 @@ button {
   background-color: var(--primary);
   color: var(--foreground);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -51,7 +51,7 @@ button > a {
   text-decoration: none;
   color: var(--foreground);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 a {
