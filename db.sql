@@ -42,6 +42,17 @@ CREATE TABLE platform (
     FOREIGN KEY (id_game) REFERENCES game (id_game)
 );
 
+INSERT INTO gamer (name_gamer, surname_gamer, email_gamer, password_gamer)
+VALUES
+    (
+        'Dupont',
+        'Patrick',
+        'patrick.dupont@example.com',
+        '$2y$10$RVaayFUxxD5CALXzYQXEreO9cjMyBgQhtiYHc.nMpvHKIKshXKozO'
+    )
+
+
+
 INSERT INTO game (name_game, editor_game, released_game, description_game, URL_cover_game, URL_site_game)
 VALUES
     (
