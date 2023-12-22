@@ -14,6 +14,12 @@
     <form action="api/auth/register.php" method="post">
       <h1>Inscription</h1>
 
+      <?php
+        if ($isError) {
+          echo "<span style= color:red >Erreur lors de l'inscription</span>";
+        }
+      ?>
+
       <div class="form-item">
         <label for="name">Nom :</label>
         <input type="name" name="name" id="name" placeholder="Nom" require>
@@ -47,3 +53,4 @@
 </body>
 
 </html>
+

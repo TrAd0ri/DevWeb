@@ -13,7 +13,11 @@
 
     <form action="api/auth/login.php" method="post">
       <h1>Se connecter a Game Collection</h1>
-
+      <?php
+        if ($isError) {
+          echo "<span style= color:red >Erreur lors de l'inscription</span>";
+        }
+      ?>
       <div class="form-item">
         <label for="email">Email :</label>
         <input type="email" name="email" id="email" placeholder="Email" require>
