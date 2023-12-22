@@ -52,7 +52,6 @@ VALUES
     );
 
 
-
 INSERT INTO game (name_game, editor_game, released_game, description_game, URL_cover_game, URL_site_game)
 VALUES
     (

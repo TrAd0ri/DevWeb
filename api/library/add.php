@@ -8,10 +8,7 @@ session_start();
 $id_game = $_POST['id'] ?? null;
 $id_gamer = $_SESSION["user_id"] ?? null;
 
-if (!$id_game && !$id_gamer) {
-  header("Location: ../../library?error=true");
-  return;
-}
+
 
 try {
   addGameToUserLibrary($id_game, $id_gamer);

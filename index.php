@@ -25,6 +25,9 @@ switch ($uri) {
   case '/login':
     require_once __DIR__ . '/controllers/LoginController.php';
     break;
+  case '/register':
+    require_once __DIR__ . '/controllers/RegisterController.php';
+    break;
   default:
     header('HTTP/1.0 404 Not Found');
     require_once __DIR__ . '/views/404.php';

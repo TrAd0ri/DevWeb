@@ -17,7 +17,7 @@ function getGamesByUserId($id)
 {
   global $db;
 
-  $query = $db->prepare('SELECT * FROM game LEFT JOIN library ON game.id_game = library.id_game WHERE library.id_gamer = :id');
+  $query = $db->prepare('SELECT game.*, number_hours_game FROM game LEFT JOIN library ON game.id_game = library.id_game WHERE library.id_gamer = :id');
   $query->execute(['id' => $id]);
 
   $games = $query->fetchAll();
