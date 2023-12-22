@@ -12,7 +12,7 @@ require_once dirname(__DIR__) . '/models/GameModel.php';
 
 $game = verifyIfUserHasGameAndReturn($id_game, $_SESSION["user_id"]);
 
-if (!$game['id']) {
+if (!$game) {
   require_once dirname(__DIR__) . '/views/404.php';
   return;
 }

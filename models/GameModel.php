@@ -39,7 +39,7 @@ function getGamesByUserIdNotAndSearch($id, $search)
 {
   global $db;
 
-  $query = $db->prepare('SELECT game.* FROM game LEFT JOIN library ON game.id_game = library.id_game WHERE (library.id_gamer IS NULL OR library.id_gamer != :id) AND (game.name_game LIKE :search OR game.editor_game LIKE :search OR game.type_game LIKE :search)');
+  $query = $db->prepare('SELECT game.* FROM game LEFT JOIN library ON game.id_game = library.id_game WHERE (library.id_gamer IS NULL OR library.id_gamer != :id) AND (game.name_game LIKE :search OR game.editor_game LIKE :search)');
   $query->execute([
     'id' => $id,
     'search' => '%' . $search . '%',
@@ -71,6 +71,7 @@ function createGame($name, $editor, $release_date, $type, $description, $url_ima
 function addGameToUserLibrary($id_game, $id_gamer)
 {
   global $db;
+  var_dump($id_game, $id_gamer);
 
   $query = $db->prepare('INSERT INTO library (id_game, id_gamer) VALUES (:id_game, :id_gamer)');
   $query->execute([
@@ -124,18 +125,39 @@ function verifyIfUserHasGameAndReturn($id_game, $id_gamer)
   return formatGame($game);
 }
 
+function getPlatformFromGame($id)
+{
+  global $db;
+
+  $query = $db->prepare('SELECT name_platform as name FROM platform WHERE id_game = :id');
+  $query->execute(['id' => $id]);
+
+  $platforms = $query->fetchAll();
+
+  $formattedPlatforms = [];
+  foreach ($platforms as $platform) {
+    $formattedPlatforms[] = $platform['name'];
+  }
+
+  return $formattedPlatforms;
+}
+
 function formatGame($game)
 {
+  if (!is_array($game)) {
+    return null;
+  }
+
   return [
     'id' => $game['id_game'] ?? null,
     'name' => $game['name_game'] ?? null,
     'editor' => $game['editor_game'] ?? null,
     'released_date' => $game['released_game'] ?? null,
-    'type' => $game['type_game'] ?? null,
     'description' => $game['description_game'] ?? null,
     'url_image' => $game['URL_cover_game'] ?? null,
     'url_website' => $game['URL_site_game'] ?? null,
     'hoursPlayed' => $game['number_hours_game'] ?? 0,
+    'platforms' => getPlatformFromGame($game['id_game']) ?? null,
   ];
 }
 

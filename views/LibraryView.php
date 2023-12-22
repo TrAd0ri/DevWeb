@@ -29,9 +29,11 @@
             <h2>
               <?= $game['name'] ?>
             </h2>
-            <p>
-              <?= $game['type'] ?>
-            </p>
+            <div>
+              <span>
+                <?= implode(", ", $game['platforms']) ?>
+              </span>
+            </div>
             <form action="api/library/add.php" method="post">
               <input type="hidden" name="id" value="<?= $game['id'] ?>">
               <input type="submit" value="Ajouter à ma bibliothèque">
