@@ -128,7 +128,7 @@ VALUES
     (
         4,
         'Xbox'
-    )
+    ),
     (
         4,
         'Nintendo'
