@@ -55,3 +55,7 @@ main {
     rgba(0, 0, 0, 0.9) 80%
   );
 }
+
+.games .game .game-content form input {
+  width: 100%;
+}

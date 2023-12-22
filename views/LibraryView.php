@@ -18,7 +18,7 @@
       <input type="text" name="search" placeholder="Rechercher un jeu" value="<?= $search ?>">
       <input type="submit" value="Rechercher">
     </form>
-    
+
     <div class="games">
       <?php foreach ($games as $game): ?>
         <div class="game">
@@ -32,9 +32,10 @@
             <p>
               <?= $game['type'] ?>
             </p>
-            <button>
-              <a href="api/library/add?id=<?= $game['id'] ?>">Ajouter à ma bibliothèque</a>
-            </button>
+            <form action="api/library/add.php" method="post">
+              <input type="hidden" name="id" value="<?= $game['id'] ?>">
+              <input type="submit" value="Ajouter à ma bibliothèque">
+            </form>
           </div>
         </div>
       <?php endforeach; ?>

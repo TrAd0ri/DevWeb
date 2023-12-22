@@ -28,7 +28,7 @@ function getGamesByUserIdNot($id)
 {
   global $db;
 
-  $query = $db->prepare('SELECT * FROM game LEFT JOIN library ON game.id_game = library.id_game WHERE library.id_gamer IS NULL OR library.id_gamer != :id');
+  $query = $db->prepare('SELECT game.* FROM game LEFT JOIN library ON game.id_game = library.id_game WHERE library.id_gamer IS NULL OR library.id_gamer != :id');
   $query->execute(['id' => $id]);
 
   $games = $query->fetchAll();
@@ -39,7 +39,7 @@ function getGamesByUserIdNotAndSearch($id, $search)
 {
   global $db;
 
-  $query = $db->prepare('SELECT * FROM game LEFT JOIN library ON game.id_game = library.id_game WHERE (library.id_gamer IS NULL OR library.id_gamer != :id) AND (game.name_game LIKE :search OR game.editor_game LIKE :search OR game.type_game LIKE :search)');
+  $query = $db->prepare('SELECT game.* FROM game LEFT JOIN library ON game.id_game = library.id_game WHERE (library.id_gamer IS NULL OR library.id_gamer != :id) AND (game.name_game LIKE :search OR game.editor_game LIKE :search OR game.type_game LIKE :search)');
   $query->execute([
     'id' => $id,
     'search' => '%' . $search . '%',
@@ -66,6 +66,19 @@ function createGame($name, $editor, $release_date, $type, $description, $url_ima
   ]);
 
   return getGameById($db->lastInsertId());
+}
+
+function addGameToUserLibrary($id_game, $id_gamer)
+{
+  global $db;
+
+  $query = $db->prepare('INSERT INTO library (id_game, id_gamer) VALUES (:id_game, :id_gamer)');
+  $query->execute([
+    'id_game' => $id_game,
+    'id_gamer' => $id_gamer,
+  ]);
+
+  return getGameById($id_game);
 }
 
 function updateGame($id, $name, $editor, $release_date, $type, $description, $url_image, $url_website)

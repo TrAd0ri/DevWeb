@@ -1,12 +1,7 @@
 <?php
-use Symfony\Component\Dotenv\Dotenv;
 
-$dir = dirname(__DIR__, 2);
-require_once $dir . '/vendor/autoload.php';
-$dotenv = new Dotenv();
-$dotenv->load($dir . '/.env');
-
-require_once $dir . "/models/UserModel.php";
+require_once dirname(__DIR__) . "/loadEnv.php";
+require_once dirname(__DIR__, 2) . "/models/UserModel.php";
 
 $email = $_POST['email'] ?? null;
 $password = $_POST['password'] ?? null;
