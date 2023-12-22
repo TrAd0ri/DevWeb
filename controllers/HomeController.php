@@ -6,6 +6,9 @@ if (!isset($_SESSION["user_id"])) {
   return;
 }
 
+require_once dirname(__DIR__) . '/models/GameModel.php';
 require_once dirname(__DIR__) . '/models/UserModel.php';
+
+$games = getGamesByUserId($_SESSION["user_id"]);
 
 require_once dirname(__DIR__) . '/views/HomeView.php';
