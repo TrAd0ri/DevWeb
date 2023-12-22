@@ -19,6 +19,9 @@ switch ($uri) {
   case '/library':
     require_once __DIR__ . '/controllers/LibraryController.php';
     break;
+  case '/game':
+    require_once __DIR__ . '/controllers/GameController.php';
+    break;
   case '/login':
     require_once __DIR__ . '/controllers/LoginController.php';
     break;

@@ -110,6 +110,20 @@ function deleteGame($id)
   return $query->rowCount() > 0;
 }
 
+function verifyIfUserHasGameAndReturn($id_game, $id_gamer)
+{
+  global $db;
+
+  $query = $db->prepare('SELECT game.*, number_hours_game FROM library JOIN game ON game.id_game = library.id_game WHERE library.id_game = :id_game AND id_gamer = :id_gamer');
+  $query->execute([
+    'id_game' => $id_game,
+    'id_gamer' => $id_gamer,
+  ]);
+
+  $game = $query->fetch();
+  return formatGame($game);
+}
+
 function formatGame($game)
 {
   return [
@@ -121,6 +135,7 @@ function formatGame($game)
     'description' => $game['description_game'] ?? null,
     'url_image' => $game['URL_cover_game'] ?? null,
     'url_website' => $game['URL_site_game'] ?? null,
+    'hoursPlayed' => $game['number_hours_game'] ?? 0,
   ];
 }
 
