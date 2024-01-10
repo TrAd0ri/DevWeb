@@ -22,7 +22,7 @@ if ($email && $password) {
   session_start();
   $_SESSION["user_id"] = $user['id'];
   $_SESSION["user_name"] = $user['name'];
-  $_SESSION["user_surname "] = $user['surname'];
+  $_SESSION["user_surname"] = $user['surname'];
   $_SESSION["user_email"] = $user['email'];
 
   header("Location: ./../../");

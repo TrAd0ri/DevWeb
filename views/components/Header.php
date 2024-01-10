@@ -68,7 +68,7 @@
       <a href="#">MA BIBLIOTHÈQUE</a>
       <a href="#">AJOUTER UN JEU</a>
       <a href="#">CLASSEMENT</a>
-      <a href="#">PROFIL</a>
+      <a href="./profile">PROFIL</a>
     </nav>
   </div>
 </header>

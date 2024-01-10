@@ -15,7 +15,7 @@
       <h1>Se connecter a Game Collection</h1>
       <?php
         if ($isError) {
-          echo "<span style= color:red >Erreur lors de l'inscription</span>";
+          echo "<span style= color:red >Erreur lors de la connexion, veuillez réessayer</span>";
         }
       ?>
       <div class="form-item">

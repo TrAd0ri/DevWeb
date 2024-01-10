@@ -16,7 +16,7 @@
 
       <?php
         if ($isError) {
-          echo "<span style= color:red >Erreur lors de l'inscription</span>";
+          echo "<span style= color:red >Erreur lors de l'inscription, veuillez réessayer</span>";
         }
       ?>
 

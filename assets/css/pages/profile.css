@@ -1,0 +1,76 @@
+@import url("./../index.css");
+@import url("../components/header.css");
+
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  margin: 50px 0 0 240px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 40vw;
+}
+
+input {
+  background-color: var(--input);
+  color: var(--foreground);
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  width: fit-content;
+}
+
+input[type="submit"] {
+    background-color: var(--primary);
+    color: var(--foreground);
+    cursor: pointer;
+}
+  
+input[type="submit"]:hover {
+    background-color: #5b4bd8;
+}
+
+button {
+    background-color: var(--primary);
+    color: var(--foreground);
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 4px;
+    width: fit-content;
+}
+  
+button:hover {
+    background-color: #5b4bd8;
+}
+  
+button:has(> a) {
+    padding: 10px 0;
+}
+  
+button > a {
+    text-decoration: none;
+    color: var(--foreground);
+    padding: 10px;
+    border-radius: 10px;
+}
+  
+a {
+    text-decoration: none;
+    color: var(--foreground);
+}

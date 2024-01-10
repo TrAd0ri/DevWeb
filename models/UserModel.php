@@ -47,7 +47,7 @@ function updateUser($id, $email, $password, $surname, $name)
   $query->execute([
     'id' => $id,
     'email' => $email,
-    'password' => $password,
+    'password' => password_hash($password, PASSWORD_DEFAULT),
     'surname' => $surname,
     'name' => $name,
   ]);
@@ -61,7 +61,7 @@ function deleteUser($id)
 
   $query = $db->prepare('DELETE FROM gamer WHERE id_gamer = :id');
   $query->execute(['id' => $id]);
-
+  
   return true;
 }
 
