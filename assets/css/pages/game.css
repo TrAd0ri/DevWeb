@@ -1,2 +1,59 @@
 @import url("../index.css");
 @import url("../components/header.css");
+
+main {
+  display: flex;
+  justify-content: space-between;
+  gap: 64px;
+  margin: 22px 120px;
+}
+
+.game-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 16px 0;
+  max-width: 800px;
+}
+
+.form-hours-played {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 16px 0;
+}
+
+.form-hours-played > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-hours-played input {
+  min-width: 80px;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+  width: 20%;
+  max-width: 400px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.copyright-container {
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+

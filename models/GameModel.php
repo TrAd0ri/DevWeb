@@ -39,7 +39,7 @@ function getGamesByUserIdNotAndSearch($id, $search)
 {
   global $db;
 
-  $query = $db->prepare('SELECT game.* FROM game LEFT JOIN library ON game.id_game = library.id_game WHERE (library.id_gamer IS NULL OR library.id_gamer != :id) AND (game.name_game LIKE :search OR game.editor_game LIKE :search)');
+  $query = $db->prepare('SELECT game.* FROM game WHERE NOT EXISTS (SELECT 1 FROM library WHERE library.id_game = game.id_game AND library.id_gamer = :id) AND (game.name_game LIKE :search OR game.editor_game LIKE :search)');
   $query->execute([
     'id' => $id,
     'search' => '%' . $search . '%',
@@ -71,7 +71,6 @@ function createGame($name, $editor, $release_date, $type, $description, $url_ima
 function addGameToUserLibrary($id_game, $id_gamer)
 {
   global $db;
-  var_dump($id_game, $id_gamer);
 
   $query = $db->prepare('INSERT INTO library (id_game, id_gamer) VALUES (:id_game, :id_gamer)');
   $query->execute([
@@ -101,12 +100,37 @@ function updateGame($id, $name, $editor, $release_date, $type, $description, $ur
   return getGameById($id);
 }
 
+function changeHoursPlayed($id_game, $id_gamer, $hours)
+{
+  global $db;
+
+  $query = $db->prepare('UPDATE library SET number_hours_game = :hours WHERE id_game = :id_game AND id_gamer = :id_gamer');
+  $query->execute([
+    'id_game' => $id_game,
+    'id_gamer' => $id_gamer,
+    'hours' => $hours,
+  ]);
+}
+
 function deleteGame($id)
 {
   global $db;
 
   $query = $db->prepare('DELETE FROM game WHERE id_game = :id');
   $query->execute(['id' => $id]);
+
+  return $query->rowCount() > 0;
+}
+
+function deleteGameFromUserLibrary($id_game, $id_gamer)
+{
+  global $db;
+
+  $query = $db->prepare('DELETE FROM library WHERE id_game = :id_game AND id_gamer = :id_gamer');
+  $query->execute([
+    'id_game' => $id_game,
+    'id_gamer' => $id_gamer,
+  ]);
 
   return $query->rowCount() > 0;
 }
