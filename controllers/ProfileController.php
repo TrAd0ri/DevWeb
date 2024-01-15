@@ -7,4 +7,6 @@ if (!isset($_SESSION["user_id"])) {
   return;
 }
 
+require_once dirname(__DIR__) . '/models/UserModel.php';
+
 require_once dirname(__DIR__) . "/views/ProfileView.php";

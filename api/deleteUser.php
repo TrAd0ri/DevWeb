@@ -1,14 +1,16 @@
 <?php
+
 require_once dirname(__DIR__) . "/api/loadEnv.php";
-require_once dirname(__DIR__, 2) . "/JEULAND-game_collection/models/UserModel.php";
+require_once dirname(__DIR__, 2) . "/models/UserModel.php";
 
-session_start();
+$id_gamer = $_SESSION["user_id"] ?? null;
 
-if ($_SESSION['user_id']) {
-    deleteUser($_SESSION['user_id']);
-    session_destroy();
-    header("Location: ./../login");
-    exit();
-} else {
+if (!$id_gamer) {
     header("Location: ./../profile");
+    return;
 }
+
+deleteUser($id_gamer);
+session_destroy();
+header("Location: ./../login");
+exit();

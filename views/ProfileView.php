@@ -9,24 +9,28 @@
 </head>
 
 <body>
-    <?php include 'components/Header.php';
-    include 'models/UserModel.php' ?>
+    <?php include 'components/Header.php' ?>
 
     <div class="profile">
         <h1>Mon profil</h1>
-        <p>Nom : <?= $_SESSION['user_name'] ?></p>
-        <p>Prénom : <?= $_SESSION['user_surname'] ?></p>
-        <p>Email : <?= $_SESSION['user_email'] ?></p>
+        <p>Nom :
+            <?= $_SESSION['user_name'] ?>
+        </p>
+        <p>Prénom :
+            <?= $_SESSION['user_surname'] ?>
+        </p>
+        <p>Email :
+            <?= $_SESSION['user_email'] ?>
+        </p>
 
         <?php if (!$isEdit) { ?>
             <button onclick="edit()">MODIFIER MON PROFIL</button>
         <?php } else { ?>
             <form action="api/editProfile.php" method="post">
-                <?php
-                if ($isError) {
-                    echo "<span style= color:red >Erreur lors de la modification, veuillez réessayer</span>";
-                }
-                ?>
+
+                <?php if ($isError) { ?>
+                    <span style=color:red>Erreur lors de la modification, veuillez réessayer</span>
+                <?php } ?>
 
                 <div class="form-item">
                     <label for="name">Nom :</label>
@@ -50,7 +54,8 @@
 
                 <div class="form-item">
                     <label for="passwordConfirm">Confirmation du mot de passe :</label>
-                    <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Mot de passe" require minlength="8">
+                    <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Mot de passe" require
+                        minlength="8">
                 </div>
 
                 <input type="submit" value="Modifier">
