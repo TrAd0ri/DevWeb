@@ -1,7 +1,6 @@
 <?php
 
-session_start();
-if (!isset($_SESSION["user_id"])) {
+if (session_status() == PHP_SESSION_NONE) {
   require_once dirname(__DIR__) . '/views/401.php';
   return;
 }
