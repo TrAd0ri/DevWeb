@@ -12,6 +12,8 @@ $uri = '/' . trim(str_replace($uri, '', $_SERVER['REQUEST_URI']), '/');
 $uri = urldecode($uri);
 $uri = strtok($uri, '?');
 
+session_start();
+
 switch ($uri) {
   case '/':
     require_once __DIR__ . '/controllers/HomeController.php';

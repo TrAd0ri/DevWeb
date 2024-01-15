@@ -2,7 +2,7 @@
 
 $isError = $_GET['error'] == 'true' ? true : false;
 
-if (session_status() == PHP_SESSION_NONE) {
+if (!isset($_SESSION["user_id"])) {
   header("Location: ./");
   return;
 }
