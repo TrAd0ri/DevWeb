@@ -13,19 +13,22 @@
 
     <form action="api/auth/login.php" method="post">
       <h1>Se connecter a Game Collection</h1>
-      <?php
-        if ($isError) {
-          echo "<span style= color:red >Erreur lors de la connexion, veuillez réessayer</span>";
-        }
-      ?>
+
+      <?php if ($isError) { ?>
+        <div class="error-msg">
+          <img src="assets/images/alert-circle.svg" alt="error" width="24px">
+          <span>Erreur lors de la connexion, veuillez réessayer</span>
+        </div>
+      <?php } ?>
+
       <div class="form-item">
         <label for="email">Email :</label>
-        <input type="email" name="email" id="email" placeholder="Email" require>
+        <input type="email" name="email" id="email" placeholder="Email" required>
       </div>
 
       <div class="form-item">
         <label for="password">Mot de passe :</label>
-        <input type="password" name="password" id="password" placeholder="Mot de passe" require minlength="6">
+        <input type="password" name="password" id="password" placeholder="Mot de passe" required minlength="6">
       </div>
 
       <input type="submit" value="Se connecter">
@@ -33,6 +36,10 @@
 
     <a href="register">S'inscrire</a>
   </main>
+
+  <div class="copyright-container">
+    <p>Game Collection - 2023 - Tous droits réservés</p>
+  </div>
 </body>
 
 </html>

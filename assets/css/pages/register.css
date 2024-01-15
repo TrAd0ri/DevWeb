@@ -1,32 +1,42 @@
 @import url("./../index.css");
 
 body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  main {
-    background-color: var(--tertiary);
-    padding: 60px 40px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .form-item {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    width: 40vw;
-  }
-  
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: var(--tertiary);
+  padding: 60px 40px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: clamp(400px, 50vw, 800px);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.copyright-container {
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

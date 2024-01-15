@@ -14,6 +14,11 @@ if (!$name || !$firstName || !$email || !$password || !$passwordConfirm) {
     return;
 }
 
+if ($password !== $passwordConfirm) {
+    header("Location: ../../register?error=true");
+    return;
+}
+
 try {
     $user = createUser($email, $password, $firstName, $name);
 } catch (Exception $e) {
