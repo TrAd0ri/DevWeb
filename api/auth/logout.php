@@ -10,6 +10,5 @@ $_SESSION["user_email"] = null;
 
 session_destroy();
 
-
 header("Location: ./../../login");
 exit();

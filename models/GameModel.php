@@ -24,17 +24,6 @@ function getGamesByUserId($id)
   return formatGames($games);
 }
 
-function getGamesByUserIdNot($id)
-{
-  global $db;
-
-  $query = $db->prepare('SELECT game.* FROM game LEFT JOIN library ON game.id_game = library.id_game WHERE library.id_gamer IS NULL OR library.id_gamer != :id');
-  $query->execute(['id' => $id]);
-
-  $games = $query->fetchAll();
-  return formatGames($games);
-}
-
 function getGamesByUserIdNotAndSearch($id, $search)
 {
   global $db;

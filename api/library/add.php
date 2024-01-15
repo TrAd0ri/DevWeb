@@ -12,7 +12,7 @@ if (!$id_game || !$id_gamer) {
 }
 
 try {
-  $game = addGameToUserLibrary($id_game, $id_gamer);
+  addGameToUserLibrary($id_game, $id_gamer);
   header("Location: ../../game?id=$id_game");
 } catch (Exception $e) {
   header("Location: ../../library?error=true");
