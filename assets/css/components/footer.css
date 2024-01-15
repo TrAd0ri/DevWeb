@@ -1,0 +1,9 @@
+.copyright-container {
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

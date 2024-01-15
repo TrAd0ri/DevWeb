@@ -53,9 +53,7 @@
     <a href="login">Se connecter</a>
   </main>
 
-  <div class="copyright-container">
-    <p>Game Collection - 2023 - Tous droits réservés</p>
-  </div>
+  <?php include 'components/Footer.php'; ?>
 </body>
 
 </html>

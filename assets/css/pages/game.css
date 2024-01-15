@@ -1,5 +1,6 @@
 @import url("../index.css");
 @import url("../components/header.css");
+@import url("../components/footer.css");
 
 main {
   display: flex;
@@ -45,15 +46,5 @@ main {
 .image-container img {
   width: 100%;
   height: auto;
-}
-
-.copyright-container {
-  padding-bottom: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
 

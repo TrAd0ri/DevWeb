@@ -67,6 +67,7 @@
         <form action="api/user/deleteUser.php" method="post"><input type="submit" value="SUPPRIMER MON COMPTE"></form>
         <form action="api/auth/logout.php" method="post"><input type="submit" value="SE DÉCONNECTER"></form>
     </div>
+    <?php include 'components/Footer.php'; ?>
 </body>
 
 </html>

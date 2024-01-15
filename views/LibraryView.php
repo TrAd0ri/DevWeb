@@ -43,7 +43,7 @@
       <?php endforeach; ?>
     </div>
   </main>
-
+  <?php include 'components/Footer.php'; ?>
 </body>
 
 </html>
