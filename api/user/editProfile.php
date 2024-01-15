@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__DIR__) . "/api/loadEnv.php";
+require_once dirname(__DIR__) . "/loadEnv.php";
 require_once dirname(__DIR__, 2) . "/models/UserModel.php";
 
 $name = $_POST['name'] ?? null;
@@ -13,6 +13,10 @@ if (!$name || !$firstName || !$email || !$password || !$passwordConfirm) {
     header("Location: ./../profile?edit=true&error=true");
     return;
 }
+if ($password !== $passwordConfirm) {
+    header("Location: ./../../profile?edit=true&error=true");
+    return;
+}   
 
 try {
     updateUser($_SESSION['user_id'], $email, $password, $firstName, $name);
@@ -25,4 +29,4 @@ $_SESSION['user_name'] = $name;
 $_SESSION['user_surname'] = $firstName;
 $_SESSION['user_email'] = $email;
 
-header("Location: ./../profile");
+header("Location: ./../../profile");

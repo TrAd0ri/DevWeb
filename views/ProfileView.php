@@ -24,9 +24,12 @@
         </p>
 
         <?php if (!$isEdit) { ?>
-            <button onclick="edit()">MODIFIER MON PROFIL</button>
+            <form action="profile" method="get">
+                <input type="hidden" name="edit" value="true">
+                <input type="submit" value="MODIFIER MON PROFIL">
+            </form>
         <?php } else { ?>
-            <form action="api/editProfile.php" method="post">
+            <form action="api/user/editProfile.php" method="post">
 
                 <?php if ($isError) { ?>
                     <span style=color:red>Erreur lors de la modification, veuillez réessayer</span>
@@ -61,24 +64,9 @@
                 <input type="submit" value="Modifier">
             </form>
         <?php } ?>
-        <button onclick="deleteUser()">SUPPRIMER MON COMPTE</button>
-        <button onclick="disconnectFunction()">SE DÉCONNECTER</button>
+        <form action="api/user/deleteUser.php" method="post"><input type="submit" value="SUPPRIMER MON COMPTE"></form>
+        <form action="api/auth/logout.php" method="post"><input type="submit" value="SE DÉCONNECTER"></form>
     </div>
-
-
-    <script>
-        function disconnectFunction() {
-            window.location.href = "api/auth/logout.php";
-        }
-
-        function deleteUser() {
-            window.location.href = "api/deleteUser.php";
-        }
-
-        function edit() {
-            window.location.href = "./profile?edit=true";
-        }
-    </script>
 </body>
 
 </html>
