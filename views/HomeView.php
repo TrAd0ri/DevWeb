@@ -28,10 +28,15 @@
               <?= $game['name'] ?>
             </h2>
             <p>
-              <?= $game['type'] ?>
+              <?php foreach ($game['platforms'] as $index => $platform): ?>
+                <?= $platform ?>
+                <?php if ($index < count($game['platforms']) - 1): ?>
+                  ,
+                <?php endif; ?>
+              <?php endforeach; ?>
             </p>
             <p>
-              <?= $game['hoursPlayed'] ?>
+              <?= $game['hoursPlayed'] ?> h
             </p>
           </div>
         </div>

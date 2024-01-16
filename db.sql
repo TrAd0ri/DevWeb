@@ -59,7 +59,7 @@ VALUES
         'Rockstar Games',
         '2018-10-26',
         'Red Dead Redemption II, également abrégé RDRII ou RDR2, est un jeu vidéo d action-aventure et de western multiplateforme, développé et édité par Rockstar Games, sorti en octobre 2018 sur Playstation 4 et Xbox One, puis en novembre 2019 sur Windows et Stadia.',
-        'https://image.api.playstation.com/cdn/UP1284/CUSA03041_00/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.png',
+        'https://tse1.mm.bing.net/th?id=OIP.FDFaAYxL5CBDyCZvWFramgHaEK&pid=Api&P=0&h=180',
         'https://www.rockstargames.com/fr/reddeadredemption2'
     ),
     (
