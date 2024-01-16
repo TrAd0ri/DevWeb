@@ -36,6 +36,13 @@
 
       <h2>Modifer le temps passé sur le jeu</h2>
 
+      <?php if ($isError) { ?>
+        <div class="error-msg">
+          <img src="assets/images/alert-circle.svg" alt="error" width="24px">
+          <span>Erreur lors de la modification ou de la suppression du jeu, veuillez réessayer</span>
+        </div>
+      <?php } ?>
+
       <form action="api/game/change-hours.php" method="post" class="form-hours-played">
         <label for="hours">Nombre d'heures</label>
         <div>

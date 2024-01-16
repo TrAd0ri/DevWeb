@@ -14,6 +14,13 @@
   <main>
     <h1>Ajouter un jeu à sa bibliothèque</h1>
 
+    <?php if ($isError) { ?>
+      <div class="error-msg">
+        <img src="assets/images/alert-circle.svg" alt="error" width="24px">
+        <span>Erreur lors de l'ajout du jeu, veuillez réessayer</span>
+      </div>
+    <?php } ?>
+
     <form method="get" action="library">
       <input type="text" name="search" placeholder="Rechercher un jeu" value="<?= $search ?>">
       <input type="submit" value="Rechercher">
