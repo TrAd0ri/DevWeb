@@ -10,7 +10,7 @@ $password = $_POST['password'] ?? null;
 $passwordConfirm = $_POST['passwordConfirm'] ?? null;
 
 if (!$name || !$firstName || !$email || !$password || !$passwordConfirm) {
-    header("Location: ./../profile?edit=true&error=true");
+    header("Location: ./../../profile?edit=true&error=true");
     return;
 }
 if ($password !== $passwordConfirm) {
@@ -21,7 +21,7 @@ if ($password !== $passwordConfirm) {
 try {
     updateUser($_SESSION['user_id'], $email, $password, $firstName, $name);
 } catch (Exception $e) {
-    header("Location: ./../profile?edit=true&error=true");
+    header("Location: ./../../profile?edit=true&error=true");
     return;
 }
 
