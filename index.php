@@ -30,9 +30,12 @@ switch ($uri) {
   case '/register':
     require_once __DIR__ . '/controllers/RegisterController.php';
     break;
-    case '/profile':
-      require_once __DIR__ . '/controllers/ProfileController.php';
-      break;
+  case '/profile':
+    require_once __DIR__ . '/controllers/ProfileController.php';
+    break;
+  case '/classement':
+    require_once __DIR__ . '/controllers/RankingController.php';
+    break;
   default:
     header('HTTP/1.0 404 Not Found');
     require_once __DIR__ . '/views/404.php';
