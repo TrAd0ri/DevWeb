@@ -21,7 +21,7 @@
       </div>
     <?php } ?>
 
-    <form method="get" action="library">
+    <form method="get" action="library" class="search-form">
       <input type="text" name="search" placeholder="Rechercher un jeu" value="<?= $search ?>">
       <input type="submit" value="Rechercher">
     </form>
