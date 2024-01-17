@@ -31,8 +31,8 @@ CREATE TABLE library (
     id_gamer INT NOT NULL,
     number_hours_game INT DEFAULT 0,
     PRIMARY KEY (id_game, id_gamer),
-    FOREIGN KEY (id_game) REFERENCES game (id_game),
-    FOREIGN KEY (id_gamer) REFERENCES gamer (id_gamer)
+    FOREIGN KEY (id_game) REFERENCES game (id_game) ON DELETE CASCADE,
+    FOREIGN KEY (id_gamer) REFERENCES gamer (id_gamer) ON DELETE CASCADE
 );
 
 CREATE TABLE platform (
@@ -42,7 +42,13 @@ CREATE TABLE platform (
     FOREIGN KEY (id_game) REFERENCES game (id_game)
 );
 
-INSERT INTO gamer (name_gamer, surname_gamer, email_gamer, password_gamer)
+INSERT INTO
+    gamer (
+        name_gamer,
+        surname_gamer,
+        email_gamer,
+        password_gamer
+    )
 VALUES
     (
         'Dupont',
@@ -51,8 +57,15 @@ VALUES
         '$2y$10$RVaayFUxxD5CALXzYQXEreO9cjMyBgQhtiYHc.nMpvHKIKshXKozO'
     );
 
-
-INSERT INTO game (name_game, editor_game, released_game, description_game, URL_cover_game, URL_site_game)
+INSERT INTO
+    game (
+        name_game,
+        editor_game,
+        released_game,
+        description_game,
+        URL_cover_game,
+        URL_site_game
+    )
 VALUES
     (
         'Red Dead Redemption 2',
@@ -87,59 +100,19 @@ VALUES
         'https://www.rockstargames.com/fr/gta-v'
     );
 
-
 INSERT INTO
     platform(id_game, name_platform)
 VALUES
-    (
-        1,
-        'PlayStation'
-    ),
-    (
-        1,
-        'Xbox'
-    ),
-    (
-        1,
-        'PC'
-    ),
-    (
-        2,
-        'PlayStation'
-    ),
-    (
-        2,
-        'Xbox'
-    ),
-    (
-        2,
-        'PC'
-    ),
-    (
-        2,
-        'Nintendo'
-    ),
-    (
-        3,
-        'Nintendo'
-    ),
-    (
-        3,
-        'PC'
-    ),
-    (
-        4,
-        'PlayStation'
-    ),
-    (
-        4,
-        'PC'
-    ),
-    (
-        4,
-        'Xbox'
-    ),
-    (
-        4,
-        'Nintendo'
-    );
+    (1, 'PlayStation'),
+    (1, 'Xbox'),
+    (1, 'PC'),
+    (2, 'PlayStation'),
+    (2, 'Xbox'),
+    (2, 'PC'),
+    (2, 'Nintendo'),
+    (3, 'Nintendo'),
+    (3, 'PC'),
+    (4, 'PlayStation'),
+    (4, 'PC'),
+    (4, 'Xbox'),
+    (4, 'Nintendo');
