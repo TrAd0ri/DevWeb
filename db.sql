@@ -59,7 +59,7 @@ VALUES
         'Rockstar Games',
         '2018-10-26',
         'Red Dead Redemption II, également abrégé RDRII ou RDR2, est un jeu vidéo d action-aventure et de western multiplateforme, développé et édité par Rockstar Games, sorti en octobre 2018 sur Playstation 4 et Xbox One, puis en novembre 2019 sur Windows et Stadia.',
-        'https://tse1.mm.bing.net/th?id=OIP.FDFaAYxL5CBDyCZvWFramgHaEK&pid=Api&P=0&h=180',
+        'https://assets.vg247.com/current//2018/05/red_dead_redemption_2_cover_art_1.jpg',
         'https://www.rockstargames.com/fr/reddeadredemption2'
     ),
     (
@@ -75,7 +75,7 @@ VALUES
         'Nintendo EPD, Monolith Soft',
         '2017-03-03',
         'The Legend of Zelda: Breath of the Wild est un jeu d action-aventure développé par la division Nintendo EPD, assisté par Monolith Soft, et publié par Nintendo le 3 mars 2017 sur Nintendo Switch lors du lancement de la console, ainsi que sur Wii U dont il est le dernier jeu produit par Nintendo.',
-        'https://www.1jour1actu.com/wp-content/uploads/2017/03/Main-Zelda.jpg',
+        'https://static1.millenium.org/articles/2/37/89/62/@/1491585-wallpapersdencom-legend-of-zelda-breath-of-the-wild-art-1280x720-article_image_bd-1.jpg',
         'https://www.nintendo.fr/Jeux/Jeux-Nintendo-Switch/The-Legend-of-Zelda-Breath-of-the-Wild-1173609.html'
     ),
     (

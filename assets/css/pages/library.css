@@ -3,10 +3,16 @@
 @import url("../components/footer.css");
 
 main {
-  padding: 22px 120px;
+  padding: 22px 120px 100px 120px;
   display: flex;
   flex-direction: column;
   gap: 22px;
+}
+
+.search-form {
+  display: flex;
+  gap: 8px;
+  width: 350px;
 }
 
 .games {
@@ -42,6 +48,8 @@ main {
 
 .games .game .game-image img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .games .game .game-content {

@@ -3,6 +3,8 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+  min-height: 100vh;
+  position: relative;
 }
 
 input {
@@ -22,6 +24,7 @@ input[type="submit"] {
   background-color: var(--primary);
   color: var(--foreground);
   cursor: pointer;
+  width: 100%;
 }
 
 input[type="submit"]:hover {
@@ -37,6 +40,7 @@ button {
   cursor: pointer;
   text-decoration: none;
   font-size: 16px;
+  width: 100%;
 }
 
 button:hover {
@@ -44,14 +48,16 @@ button:hover {
 }
 
 button:has(> a) {
-  padding: 10px 0;
+  padding: 0;
 }
 
 button > a {
+  display: block;
   text-decoration: none;
   color: var(--foreground);
-  padding: 10px;
+  padding: 10px 0;
   border-radius: 10px;
+  width: 100%;
 }
 
 a {

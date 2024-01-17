@@ -43,19 +43,20 @@
         </div>
       <?php } ?>
 
-      <form action="api/game/change-hours.php" method="post" class="form-hours-played">
-        <label for="hours">Nombre d'heures</label>
-        <div>
-          <input type="number" name="hours" id="hours" min="0" max="1000" required value="<?= $game['hoursPlayed'] ?>">
+      <div class="game-actions">
+        <form action="api/game/change-hours.php" method="post" class="form-hours-played">
+          <label for="hours">Nombre d'heures</label>
+          <div>
+            <input type="number" name="hours" id="hours" min="0" max="1000" required value="<?= $game['hoursPlayed'] ?>">
+            <input type="hidden" name="id" value="<?= $game['id'] ?>">
+            <button type="submit">Modifier le temps passé sur le jeu</button>
+          </div>
+        </form>
+        <form action="api/game/delete.php" method="post">
           <input type="hidden" name="id" value="<?= $game['id'] ?>">
-          <button type="submit">Modifier le temps passé sur le jeu</button>
-        </div>
-      </form>
-
-      <form action="api/game/delete.php" method="post">
-        <input type="hidden" name="id" value="<?= $game['id'] ?>">
-        <button type="submit">Supprimer le jeu de ma bibliothèque</button>
-      </form>
+          <button type="submit">Supprimer le jeu de ma bibliothèque</button>
+        </form>
+      </div>
     </div>
     <div class="image-container">
       <img src="<?= $game['url_image'] ?>" alt="<?= $game['name'] ?>">
