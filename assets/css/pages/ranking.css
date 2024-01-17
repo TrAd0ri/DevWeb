@@ -1,39 +1,28 @@
+@import url("./../index.css");
 @import url("../components/header.css");
 @import url("../components/footer.css");
-@import url("./../index.css");
 
-.classement {
+main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  margin: 50px 0 0 240px;
+  margin: 22px 120px 0 120px;
+  gap: 22px;
 }
 
-h1 {
-    margin-bottom: 20px;
-}
-
-.classement table tr:nth-child(even) {
+table tr:nth-child(even) {
   background-color: var(--background);
 }
 
-.classement table tr:nth-child(odd) {
-    background-color: var(--input);
-  }
-
-.classement table th {
-    text-align: left;
-    background-color: var(--background);
-    padding: 10px 0;
+table tr:nth-child(odd) {
+  background-color: var(--input);
 }
 
-.classement table td {
-    padding: 10px 5px;
+table th {
+  text-align: left;
+  background-color: var(--background);
+  padding: 10px 0;
 }
 
-.classement table {
-    max-width: 80%;
-    min-width: 50%;
+table td {
+  padding: 10px 5px;
 }
-
