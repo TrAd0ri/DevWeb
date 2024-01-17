@@ -25,7 +25,7 @@
           </div>
           <div class="game-content">
             <h2>
-              <?= $game['name'] ?>
+              <?= $game['name']," ", $game['hoursPlayed'] ?> h
             </h2>
             <p>
               <?php foreach ($game['platforms'] as $index => $platform): ?>
@@ -34,9 +34,6 @@
                   ,
                 <?php endif; ?>
               <?php endforeach; ?>
-            </p>
-            <p>
-              <?= $game['hoursPlayed'] ?> h
             </p>
           </div>
         </div>
