@@ -17,6 +17,11 @@ main {
   max-width: 800px;
 }
 
+.game-actions {
+  min-width: 350px;
+  max-width: 70%;
+}
+
 .form-hours-played {
   display: flex;
   flex-direction: column;
@@ -45,6 +50,6 @@ main {
 
 .image-container img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
-
