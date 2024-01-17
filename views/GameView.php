@@ -47,7 +47,7 @@
         <form action="api/game/change-hours.php" method="post" class="form-hours-played">
           <label for="hours">Nombre d'heures</label>
           <div>
-            <input type="number" name="hours" id="hours" min="0" max="1000" required value="<?= $game['hoursPlayed'] ?>">
+            <input type="number" name="hours" id="hours" min="0" max="20000" required value="<?= $game['hoursPlayed'] ?>">
             <input type="hidden" name="id" value="<?= $game['id'] ?>">
             <button type="submit">Modifier le temps passé sur le jeu</button>
           </div>

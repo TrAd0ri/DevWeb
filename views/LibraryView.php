@@ -12,7 +12,12 @@
   <?php include 'components/Header.php'; ?>
 
   <main>
-    <h1>Ajouter un jeu à sa bibliothèque</h1>
+    <div class="btn-group">
+      <h1>Ajouter un jeu à sa bibliothèque</h1>
+      <button class="btn-add-game">
+        <a href="add-game">Ajouter un jeu manuellement</a>
+      </button>
+    </div>
 
     <?php if ($isError) { ?>
       <div class="error-msg">

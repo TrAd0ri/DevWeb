@@ -1,0 +1,63 @@
+@import url("../index.css");
+@import url("../components/header.css");
+@import url("../components/footer.css");
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 22px 120px 0 120px;
+  padding-bottom: 120px;
+  width: calc(50% - 120px);
+  min-width: 500px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+textarea {
+  resize: none;
+  background-color: var(--input);
+  color: var(--foreground);
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+textarea::placeholder {
+  color: var(--secondary);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+fieldset > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  background-color: var(--input);
+  border-radius: 10px;
+}

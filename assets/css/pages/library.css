@@ -9,10 +9,20 @@ main {
   gap: 22px;
 }
 
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .search-form {
   display: flex;
   gap: 8px;
   width: 350px;
+}
+
+button.btn-add-game {
+  width: 250px;
 }
 
 .games {

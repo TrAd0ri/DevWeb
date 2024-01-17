@@ -39,23 +39,41 @@ function getGamesByUserIdNotAndSearch($id, $search)
 }
 
 
-function createGame($name, $editor, $release_date, $type, $description, $url_image, $url_website)
+function createGameWithPlatforms($name, $editor, $release_date, $description, $url_image, $url_site, $platforms)
 {
   global $db;
 
-  $query = $db->prepare('INSERT INTO game (name_game, editor_game, released_game, type_game, description_game, URL_cover_game, URL_site_game) VALUES (:name, :editor, :release_date, :type, :description, :url_image, :url_website)');
-  $query->execute([
-    'name' => $name,
-    'editor' => $editor,
-    'release_date' => $release_date,
-    'type' => $type,
-    'description' => $description,
-    'url_image' => $url_image,
-    'url_website' => $url_website,
-  ]);
+  $db->beginTransaction();
 
-  return getGameById($db->lastInsertId());
+  try {
+    $query = $db->prepare('INSERT INTO game (name_game, editor_game, released_game, description_game, URL_cover_game, URL_site_game) VALUES (:name, :editor, :release_date, :description, :url_image, :url_site)');
+    $query->execute([
+      'name' => $name,
+      'editor' => $editor,
+      'release_date' => $release_date,
+      'description' => $description,
+      'url_image' => $url_image,
+      'url_site' => $url_site,
+    ]);
+
+    $game_id = $db->lastInsertId();
+
+    foreach ($platforms as $platform) {
+      $query = $db->prepare('INSERT INTO platform (id_game, name_platform) VALUES (:id_game, :name_platform)');
+      $query->execute([
+        'id_game' => $game_id,
+        'name_platform' => $platform,
+      ]);
+    }
+
+    $db->commit();
+    return $game_id;
+  } catch (Exception $e) {
+    $db->rollBack();
+    throw $e;
+  }
 }
+
 
 function addGameToUserLibrary($id_game, $id_gamer)
 {
